@@ -1,1 +1,0 @@
-/Users/neel/.wezterm.lua
