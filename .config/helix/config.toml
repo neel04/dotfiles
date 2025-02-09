@@ -1,0 +1,43 @@
+theme = 'gruvbox_dark_hard'
+
+[editor]
+bufferline = 'multiple'
+completion-trigger-len = 1
+auto-pairs = true
+line-number = "relative"
+auto-format= false
+mouse = true
+end-of-line-diagnostics = "hint"
+
+[keys.normal]
+C-l = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+ret = 'goto_word'
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+# other-lines = "error"
+
+[editor.indent-guides]
+render = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+center = ["version-control", "read-only-indicator"]
+right = ["register", "primary-selection-length", "position", "diagnostics"]
+separator = "|"
+mode.normal	= "NORMAL"
+mode.insert	= "INSERT"
+mode.select	= "SELECT"
+
+[editor.file-picker]
+hidden = false
