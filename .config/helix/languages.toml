@@ -64,6 +64,22 @@ args = []
 [language-server.texlab.config]
 build.onSave = true
 
+
+[[language]]
+name = "java"
+scope = "source.java"
+injection-regex = "java"
+file-types = ["java", "jav", "pde"]
+roots = ["pom.xml", "build.gradle", ]
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "jdtls" ]
+
+[language-server]
+jdtls = { command = "jdtls" }
+language-server = { command = "jdtls", args = [
+  "-data", "~/.cache/jdtls/workspace"
+  ]}
+
 [[language]]
 name = "bash"
 scope = "source.shell"
