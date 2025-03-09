@@ -116,6 +116,15 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# yazi
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/neel/Documents/packages/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/neel/Documents/packages/google-cloud-sdk/path.zsh.inc'; fi
