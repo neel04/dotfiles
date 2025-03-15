@@ -1,0 +1,13 @@
+[user]
+	email = neelgupta04@outlook.com
+	name = Neel Gupta
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[core]
+	editor = hx
+[diff]
+	external = difft
+	tool = difft
