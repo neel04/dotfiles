@@ -23,7 +23,7 @@
   "relative_line_numbers": true,
   "vim_mode": true,
   "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "buffer_font_size": 13.5,
   "terminal": {
     "font_family": "JetBrains Mono NL",
     "font_size": 13

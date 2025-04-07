@@ -39,7 +39,7 @@
     "context": "BufferSearchBar",
     "bindings": {
       "cmd-f3": "search::SelectNextMatch",
-      "cmd-shift-f3": "search::SelectPrevMatch"
+      "cmd-shift-f3": "search::SelectPreviousMatch"
     }
   },
   {
@@ -81,12 +81,7 @@
     "context": "Editor && vim_mode != helix_normal && vim_operator == none && !VimWaiting",
     "bindings": {
       "escape": "vim::SwitchToHelixNormalMode"
-    }
-  },
-  {
-    "context": "Editor && vim_mode != helix_normal",
-    "bindings": {
-      "escape": "vim::SwitchToHelixNormalMode"
+      // "escape": ["vim::HelixNormalAfter"]
     }
   },
   {
@@ -133,9 +128,9 @@
       "g /": "pane::DeploySearch",
       "?": ["vim::Search", { "backwards": true }],
       "*": "vim::MoveToNext",
-      "#": "vim::MoveToPrev",
+      "#": "vim::MoveToPrevious",
       "n": "vim::MoveToNextMatch",
-      "shift-n": "vim::MoveToPrevMatch",
+      "shift-n": "vim::MoveToPreviousMatch",
       "%": "vim::Matching",
       "] }": ["vim::UnmatchedForward", { "char": "}" }],
       "[ {": ["vim::UnmatchedBackward", { "char": "{" }],
@@ -185,7 +180,7 @@
       "g shift-a": "editor::FindAllReferences", // zed specific
       "g space": "editor::OpenExcerpts", // zed specific
       "g *": ["vim::MoveToNext", { "partial_word": true }],
-      "g #": ["vim::MoveToPrev", { "partial_word": true }],
+      "g #": ["vim::MoveToPrevious", { "partial_word": true }],
       "g j": ["vim::Down", { "display_lines": true }],
       "g down": ["vim::Down", { "display_lines": true }],
       "g k": ["vim::Up", { "display_lines": true }],
@@ -197,7 +192,7 @@
       "g ^": ["vim::FirstNonWhitespace", { "display_lines": true }],
       "g v": "vim::RestoreVisualSelection",
       "g ]": "editor::GoToDiagnostic",
-      "g [": "editor::GoToPrevDiagnostic",
+      "g [": "editor::GoToPreviousDiagnostic",
       "g i": "vim::InsertAtPrevious",
       "g ,": "vim::ChangeListNewer",
       "g ;": "vim::ChangeListOlder",
@@ -254,7 +249,7 @@
       ".": "vim::Repeat",
       "shift-d": "vim::DeleteToEndOfLine",
       "shift-j": "vim::JoinLines",
-      "y": ["vim::Yank", ["vim::SwitchMode", "HelixNormal"]],
+      "y": "editor::Copy",
       "shift-y": "vim::YankLine",
       "i": "vim::InsertBefore",
       "shift-i": "vim::InsertFirstNonWhitespace",
@@ -267,7 +262,7 @@
       "~": "vim::ChangeCase",
       "ctrl-a": "vim::Increment",
       "ctrl-x": "vim::Decrement",
-      "p": ["workspace::SendKeystrokes", "p escape"],
+      "p": "vim::Paste",
       "shift-p": ["vim::Paste", { "before": true }],
       "u": "vim::Undo",
       "ctrl-r": "vim::Redo",
@@ -284,21 +279,21 @@
       "g q": "vim::PushRewrap",
       "g w": "vim::PushRewrap",
       "ctrl-pagedown": "pane::ActivateNextItem",
-      "ctrl-pageup": "pane::ActivatePrevItem",
+      "ctrl-pageup": "pane::ActivatePreviousItem",
       "insert": "vim::InsertBefore",
       // tree-sitter related commands
-      "alt-o": "editor::SelectLargerSyntaxNode",
+      "[ x": "editor::SelectLargerSyntaxNode",
       "] x": "editor::SelectSmallerSyntaxNode",
       "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPrevDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
       "] c": "editor::GoToHunk",
-      "[ c": "editor::GoToPrevHunk",
+      "[ c": "editor::GoToPreviousHunk",
       // Goto mode
       "g n": "pane::ActivateNextItem",
-      "g p": "pane::ActivatePrevItem",
+      "g p": "pane::ActivatePreviousItem",
       // "tab": "pane::ActivateNextItem",
       // "shift-tab": "pane::ActivatePrevItem",
-      "H": "pane::ActivatePrevItem",
+      "H": "pane::ActivatePreviousItem",
       "L": "pane::ActivateNextItem",
       "g l": "vim::EndOfLine",
       "g h": "vim::StartOfLine",
@@ -341,10 +336,10 @@
       // "ctrl-v": "editor::Paste",
       "shift-u": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
-      "d": "editor::Delete" // TODO: yank first
+      "d": ["workspace::SendKeystrokes", "y d"],
+      "c": ["workspace::SendKeystrokes", "d i"]
     }
   },
-
   {
     "context": "Editor && vim_mode == visual || vim_mode == helix_normal && !VimWaiting && !VimObject",
     "bindings": {
@@ -355,7 +350,7 @@
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
       "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrev"
+      "ctrl-k": "editor::ContextMenuPrevious"
     }
   },
   {
@@ -383,6 +378,7 @@
       // "w": "editor::SelectToNextWordEnd",
       // "b": "editor::SelectToPreviousWordStart",
       // "e": "editor::SelectToNextSubwordEnd",
+      ";": "vim::SwitchToNormalMode",
       "": "editor::SplitSelectionIntoLines",
       "x": ["workspace::SendKeystrokes", "j g l"],
       "C": ["workspace::SendKeystrokes", "j"]
