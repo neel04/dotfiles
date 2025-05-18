@@ -45,4 +45,4 @@ mode.insert	= "INSERT"
 mode.select	= "SELECT"
 
 [editor.file-picker]
-hidden = false
+hidden = true
