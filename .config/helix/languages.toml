@@ -6,12 +6,20 @@ file-types = ["py","pyi","py3","pyw",".pythonstartup",".pythonrc"]
 shebangs = ["python"]
 roots = [".", "pyproject.toml", "pyrightconfig.json"]
 comment-token = "#"
-language-servers = ["basedpyright", "ruff", { name = "pylsp", except-features = ["workspace-symbols"] }] 
+language-servers = ["basedpyright", "ruff", { name = "pylsp", except-features = ["workspace-symbols", "format"] }] 
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
 [language.formatter]
 command = "ruff"
+
+[language-server.pylsp.config.pylsp.plugins]
+autopep8.enabled = false
+flake8.enabled = false
+pycodestyle.enabled = false
+pyflakes.enabled = false
+pylint.enabled = false
+yapf.enabled = false
 
 [language.debugger]
 name = "debugpy"
