@@ -17,8 +17,8 @@ command = "ruff"
 autopep8.enabled = false
 flake8.enabled = false
 pycodestyle.enabled = false
-pyflakes.enabled = false
-pylint.enabled = false
+pyflakes.enabled = true
+pylint.enabled = true
 yapf.enabled = false
 
 [language.debugger]

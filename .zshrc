@@ -141,3 +141,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export EDITOR="hx"
 alias claude="/Users/neel/.claude/local/claude"
+
+# For SkyPilot shell completion
+. ~/.sky/.sky-complete.zsh
