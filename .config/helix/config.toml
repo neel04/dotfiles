@@ -1,6 +1,8 @@
 theme = 'gruvbox_dark_hard'
 
 [editor]
+color-modes = true
+true-color = true
 bufferline = 'multiple'
 completion-trigger-len = 1
 auto-pairs = true
@@ -33,16 +35,42 @@ normal = "block"
 select = "underline"
 
 [editor.lsp]
+goto-reference-include-declaration = false
 display-inlay-hints = true
+display-progress-messages = true
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "file-modification-indicator"]
 center = ["version-control", "read-only-indicator"]
-right = ["register", "primary-selection-length", "position", "diagnostics"]
+right = ["register", "position", "diagnostics", "file-type"]
 separator = "|"
 mode.normal	= "NORMAL"
 mode.insert	= "INSERT"
 mode.select	= "SELECT"
 
 [editor.file-picker]
-hidden = true
+hidden = false
+
+[keys.normal.backspace]
+backspace = "suspend"
+
+# Yazi
+e = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
+
+# Lazygit
+g = [
+  ":write-all",
+  ":insert-output lazygit >/dev/tty",
+  ":redraw",
+  ":set mouse false",
+  ":set mouse true",
+  ":reload-all"
+]
