@@ -1,6 +1,7 @@
 theme = 'gruvbox_dark_hard'
 
 [editor]
+clipboard-provider = "pasteboard"
 color-modes = true
 true-color = true
 bufferline = 'multiple'
