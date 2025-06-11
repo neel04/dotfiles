@@ -52,6 +52,9 @@ mode.select	= "SELECT"
 [editor.file-picker]
 hidden = false
 
+[keys.normal.space.space]
+c = ":sh realpath %{buffer_name} | pbcopy"
+
 [keys.normal.backspace]
 backspace = "suspend"
 
