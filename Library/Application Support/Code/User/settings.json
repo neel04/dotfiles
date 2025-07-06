@@ -20,7 +20,7 @@
     "editor.fontLigatures": true,
     "r.lsp.diagnostics": false,
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "0xProto Nerd Font",
+    "editor.fontFamily": "IBM Plex Mono",
     "editor.fontSize": 12.5,
     "diffEditor.ignoreTrimWhitespace": false,
     "github.copilot.editor.enableAutoCompletions": true,
@@ -484,4 +484,5 @@
     "files.associations": {
         "*.rmd": "markdown"
     },
+    "python.analysis.typeCheckingMode": "standard",
 }
