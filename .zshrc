@@ -101,6 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
 
+alias mount-zeus='sshfs zeus:/ ~/mnt/zeus -o volname=Zeus -o auto_cache -o reconnect'
+alias umount-zeus='umount ~/mnt/zeus'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/neel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
