@@ -27,3 +27,7 @@ ignore = Name uv.lock
 ignore = Name profiles
 ignore = Name .opencode
 ignore = Name OpenCode.md
+ignore = Name *models*
+ignore = Name *safetensors*
+ignore = Name *chkp*
+ignore = Name *.tensor
