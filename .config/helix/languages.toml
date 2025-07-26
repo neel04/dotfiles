@@ -177,3 +177,12 @@ name = "gdbserver attach"
 request = "attach"
 completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
 args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
+
+[[language]]
+name = "cmake"
+auto-format = true
+language-servers = [{ name = "neocmakelsp" }]
+
+[language-server.neocmakelsp]
+command = "neocmakelsp"
+args = ["--stdio"]
