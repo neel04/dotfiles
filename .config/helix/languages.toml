@@ -148,11 +148,11 @@ auto-format = false
 [[language]]
 name = "cpp"
 file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", { glob = ".hpp.in" }, { glob = ".h.in" }]
-formatter = { command = 'clang-format' }
 language-servers = ["clangd"] 
+formatter = { command = "clang-format", args = ["--style={IndentWidth: 4, UseTab: Always}"] }
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
-indent = { tab-width = 4, unit = " " }
+indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
 [language.debugger]
