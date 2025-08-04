@@ -1,5 +1,6 @@
 root = /Users/neel/Documents/research
 root = ssh://zeus//home/neel/Documents/research
+prefer = /Users/neel/Documents/research
 auto = true
 batch = true
 ignore = Name .git
