@@ -20,8 +20,8 @@
     "editor.fontLigatures": true,
     "r.lsp.diagnostics": false,
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "IBM Plex Mono",
-    "editor.fontSize": 12.5,
+    "editor.fontFamily": "JetBrains Mono NL",
+    "editor.fontSize": 13,
     "diffEditor.ignoreTrimWhitespace": false,
     "github.copilot.editor.enableAutoCompletions": true,
     "editor.minimap.enabled": false,
@@ -485,4 +485,5 @@
         "*.rmd": "markdown"
     },
     "python.analysis.typeCheckingMode": "standard",
+    "github.copilot.nextEditSuggestions.enabled": true,
 }

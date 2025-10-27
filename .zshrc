@@ -72,6 +72,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vi-mode zsh-fzf-history-search)
 
+# Increase omz history size
+HISTSIZE=100000
+SAVEHIST=100000
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

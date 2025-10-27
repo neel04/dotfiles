@@ -1,5 +1,5 @@
 root = /Users/neel/Documents/research
-root = ssh://zeus//home/neel/Documents/research
+root = ssh://neel@0.tcp.eu.ngrok.io:16714//home/neel/Documents/research
 prefer = /Users/neel/Documents/research
 auto = true
 batch = true
