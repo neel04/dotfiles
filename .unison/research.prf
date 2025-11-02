@@ -1,5 +1,5 @@
 root = /Users/neel/Documents/research
-root = ssh://neel@0.tcp.eu.ngrok.io:16714//home/neel/Documents/research
+root = ssh://neel@0.tcp.eu.ngrok.io:11303//home/neel/Documents/research
 prefer = /Users/neel/Documents/research
 auto = true
 batch = true
@@ -31,3 +31,5 @@ ignore = Name OpenCode.md
 ignore = Name .ropeproject
 ignore = Name run_tpu.sh
 ignore = Name tpu_babysitter.sh
+ignore = Name gcp_babysit.sh
+ignore = Name *checkpoints*
