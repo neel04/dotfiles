@@ -486,4 +486,5 @@
     },
     "python.analysis.typeCheckingMode": "standard",
     "github.copilot.nextEditSuggestions.enabled": true,
+    "geminicodeassist.project": "firm-conduit-324z7",
 }

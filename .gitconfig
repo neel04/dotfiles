@@ -9,7 +9,7 @@
 [core]
 	editor = hx
 [diff]
-	tool = difftastic
+	tool = difft
 [difftool "difftastic"]
 	cmd = sh -c 'difft "$1" "$2"' -- "$LOCAL" "$REMOTE"
 [difftool]
