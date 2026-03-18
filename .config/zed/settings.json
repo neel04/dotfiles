@@ -10,25 +10,25 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4",
     },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "gpt-4o",
     },
   },
   "base_keymap": "VSCode",
   "theme": "Gruvbox Dark Hard",
   "buffer_font_family": "JetBrains Mono",
   "ui_font_features": {
-    "ligatures": true
+    "ligatures": true,
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "helix_mode": true,
   "ui_font_size": 15,
   "buffer_font_size": 13.5,
   "terminal": {
     "font_family": "0xProto Nerd Font Propo",
-    "font_size": 12
-  }
+    "font_size": 12,
+  },
 }
