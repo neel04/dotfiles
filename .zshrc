@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -149,7 +149,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export EDITOR="hx"
 export HELIX_RUNTIME=~/src/helix/runtime
 
-alias claude="/Users/neel/.claude/local/claude"
 
 # For SkyPilot shell completion
 . ~/.sky/.sky-complete.zsh

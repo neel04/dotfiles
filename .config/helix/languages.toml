@@ -186,3 +186,8 @@ language-servers = [{ name = "neocmakelsp" }]
 [language-server.neocmakelsp]
 command = "neocmakelsp"
 args = ["--stdio"]
+
+[[language]]
+name = "typescript"
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.ts"] }
+auto-format = true
