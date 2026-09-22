@@ -10,8 +10,8 @@
 	editor = hx
 [diff]
 	tool = difft
-	external = difft
+	external = /Users/neel/.local/bin/difft-git
 [difftool "difftastic"]
-	cmd = sh -c 'difft "$1" "$2"' -- "$LOCAL" "$REMOTE"
+	cmd = sh -c '/Users/neel/.local/bin/difft-git "$1" "$2"' -- "$LOCAL" "$REMOTE"
 [difftool]
 	prompt = false

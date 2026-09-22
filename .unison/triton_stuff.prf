@@ -1,5 +1,5 @@
 root = /Users/neel/Documents/triton_stuff
-root = ssh://zeus//home/neel/Documents/triton_stuff
+root = ssh://neel@10.tcp.eu.ngrok.io:27958//home/neel/Documents/triton_stuff
 auto = true
 batch = true
 ignore = Name .git

@@ -18,4 +18,47 @@
       // "j k": "vim::NormalBefore"
     },
   },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "bindings": {
+      "enter": ["workspace::SendKeystrokes", "g w"],
+      // Bracket navigation — Helix-style goto prev/next
+      "] g": "editor::GoToHunk", // next git change
+      "[ g": "editor::GoToPreviousHunk", // prev git change
+      "] c": "vim::NextComment", // next comment
+      "[ c": "vim::PreviousComment", // prev comment
+      "] d": "editor::GoToDiagnostic", // next diagnostic
+      "[ d": "editor::GoToPreviousDiagnostic", // prev diagnostic
+      "] f": "vim::NextMethodStart", // next function
+      "[ f": "vim::PreviousMethodStart", // prev function
+      "] space": "vim::InsertEmptyLineBelow", // blank line below
+      "[ space": "vim::InsertEmptyLineAbove", // blank line above
+      "space g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    // Press `space g` again inside the git panel to close it (real toggle).
+    "context": "GitPanel",
+    "bindings": {
+      "space g": "workspace::CloseActiveDock",
+    },
+  },
+  {
+    // Bare single-letter git actions once the panel is focused.
+    "context": "GitPanel && ChangesList",
+    "bindings": {
+      "s": "git::StageFile",
+      "u": "git::UnstageFile",
+      "c": "git::Commit",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-g": [
+        "task::Spawn",
+        { "task_name": "lazygit", "reveal_target": "center" },
+      ],
+    },
+  },
 ]

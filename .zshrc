@@ -152,3 +152,16 @@ export HELIX_RUNTIME=~/src/helix/runtime
 
 # For SkyPilot shell completion
 . ~/.sky/.sky-complete.zsh
+
+if command -v direnv >/dev/null 2>&1; then
+    eval "$(direnv hook zsh)"
+fi
+
+# kimi-code
+export PATH="/Users/neel/.kimi-code/bin:$PATH"
+
+# >>> flywheel PATH >>>
+if ! printf "%s" ":$PATH:" | grep -F -q ':/Users/neel/.local/bin:'; then
+  export PATH='/Users/neel/.local/bin':$PATH
+fi
+# <<< flywheel PATH <<<

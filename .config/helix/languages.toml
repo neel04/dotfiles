@@ -6,7 +6,7 @@ file-types = ["py","pyi","py3","pyw",".pythonstartup",".pythonrc"]
 shebangs = ["python"]
 roots = [".", "pyproject.toml", "pyrightconfig.json"]
 comment-token = "#"
-language-servers = ["basedpyright", "ruff", { name = "pylsp", except-features = ["document-symbols", "workspace-symbols", "format"] }] 
+language-servers = [{ name = "pyrefly", only-features = ["hover"] }, "basedpyright", "ruff", { name = "pylsp", except-features = ["document-symbols", "workspace-symbols", "format"] }]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
@@ -18,7 +18,9 @@ autopep8.enabled = false
 flake8.enabled = false
 pycodestyle.enabled = false
 pyflakes.enabled = true
-pylint.enabled = true
+# pylint isn't installed in the venvs, so every lint pass threw
+# ModuleNotFoundError. ruff already covers linting.
+pylint.enabled = false
 yapf.enabled = false
 
 [language.debugger]
@@ -51,6 +53,12 @@ args = ["--ignore", "E402", "E731"]
 
 [language-server.ruff.config.settings.format]
 preview = true
+
+# Shape-aware hover (reads pyrefly.toml in the repo; binary comes from the
+# activated .venv, so it resolves via PATH when helix is launched from one).
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
 
 [[language]]
 name = "markdown"

@@ -1,6 +1,6 @@
 root = /Users/neel/Documents/work
 force = /Users/neel/Documents/work
-root = ssh://zeus//home/neel/Documents/work
+root = ssh://neel@10.tcp.eu.ngrok.io:27958//home/neel/Documents/work
 auto = true
 batch = true
 ignore = Name .git

@@ -1,10 +1,11 @@
-theme = 'gruvbox_dark_hard'
+theme = 'gruvbox_dark_hard_dim'
 
 [editor]
 clipboard-provider = "pasteboard"
 color-modes = true
 true-color = true
-bufferline = 'multiple'
+# moka.hx draws the bufferline now; native one off to avoid two of them.
+bufferline = 'never'
 completion-trigger-len = 1
 auto-pairs = true
 line-number = "relative"
@@ -20,8 +21,23 @@ C-l = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 C-s = ':wa'
-
 ret = 'goto_word'
+
+# smooth-scroll.hx
+C-d = ":half-page-down-smooth"
+C-u = ":half-page-up-smooth"
+pageup = ":page-up-smooth"
+pagedown = ":page-down-smooth"
+
+[keys.normal.space]
+l = ":lsp-stop"
+L = ":lsp-restart"
+
+# space+G+b keeps helix's native breakpoint (and its gutter marker) and mirrors
+# it into .pdbrc for pdb/ipdb. Only overrides `b`; the rest of the debug menu
+# comes from the default keymap.
+[keys.normal.space.G]
+b = ["dap_toggle_breakpoint", ":pdb-break"]
 
 [editor.inline-diagnostics]
 cursor-line = "error"
